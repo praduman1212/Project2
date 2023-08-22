@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infintix</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="generatepassword.js"></script>
+</head>
+<body>
+  
+  <div class="container">
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Contact Us</a></li>
+  
+        </ul>
+      </nav>
+    </header>
+    <div id="headingOne">
+      <h1>Welcome to Infintix Password Generator</h1>
+    </div>
+    <h2>Generate a secure password</h2>
+
+  
+    <form >
+      <label for="passwordLength">Password Length:</label>
+      <input type="number" id="passwordLength" min="6" value="12">
+      <button type="button"  id="generateButton" onclick="generateAndDisplayPassword()">Generate</button>
+  </form>
+  
+  <p id="generatedPassword"></p>
+  
+  <script>
+      function generateAndDisplayPassword() {
+          const passwordLength = parseInt(document.getElementById("passwordLength").value);
+          const generatedPassword = generatePassword(passwordLength);
+          document.getElementById("generatedPassword").textContent = "Generated Password: " + generatedPassword;
+      }
+  </script>
+    <div id="footer">
+      <div class="box">
+        <p>
+          <h3 id="headingThree">Suggestions for a strong password:</h3>
+           <b>1. Length</b>  :It should be atleast 8 characters long. <br>
+           <b>2. Complexity</b> : Include a mix of uppercase and lowercase letters,numbers and special characters. <br>
+          <b>2. Avoid personal information</b> : Don't use name,username,phone number or birthday in your password. <br>
+          <b>4. Unique</b> : Use a different password for each of your accounts to minimise the risk of multple accounts being compromised. <br>
+        </p>
+      </div>
+
+    
+      <div id="end">
+
+      </div>
+  
+    </div>
+  
+    
+  </div>
+  
+</body>
+</html>
+
